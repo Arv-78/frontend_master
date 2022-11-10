@@ -1,50 +1,65 @@
 import React from "react";
-import Container from '@mui/material/Container';
-import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import logo from '../images/logo.png';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-function Login(){
+import Typography from "@mui/material/Typography";
+import logo from "../images/logo.png";
+import Button from "@mui/material/Button";
+import useStyles from "../styles";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import InputAdornment from "@mui/material/InputAdornment";
 
-    return (
-        <Container component="main" maxWidth="md">
-        <CssBaseline />
-        <Box
+function Login() {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.loginDiv}>
+      <div className={classes.leftLogin}>
+        <img className="logo-img" src={logo} alt="logo" />
+        <Typography variant="h3" mb={2} color="#37366F">
+          Login
+        </Typography>
+        <Typography variant="h5">
+          Welcome to D-Community!
+        </Typography>
+        <Typography variant="subtitle1" pr={3} mb={5} color="#00000099">
+          Please login to your account and start searching for jobs...
+        </Typography>
+        <label className="label" for="fname">
+          Mobile Number<span style={{ color: "red" }}>*</span>
+        </label>
+        <OutlinedInput
+          sx={{ borderRadius: "40px", marginTop: "4%" }}
+          size="small"
+          placeholder="Enter your mobile number"
+          fullWidth
+          required
+        />
+        <label className="label" for="fname">
+          Enter OTP
+        </label>
+        <OutlinedInput
+          startAdornment={
+            <InputAdornment position="start">
+              <LockOutlinedIcon />
+            </InputAdornment>
+          }
+          sx={{ borderRadius: "40px", marginTop: "4%" }}
+          size="small"
+          fullWidth
+        />
+        <Button
           sx={{
-            marginTop: 8,
-            marginLeft: 20,
-            marginRight: 15 ,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'left',
+            borderRadius: "40px",
+            backgroundColor: "#26AEE2",
+            marginTop: "15%",
           }}
+          fullWidth
+          variant="contained"
         >
-        
-        <img className="logo-img" src={logo} alt="logo"/>
-        
-        <Typography component="h1" variant="h3">
-            Login
-        </Typography>
-        <Typography mt={2} mb={1} variant="h5">
-            Welcome to D-Community!
-        </Typography>
-        <Typography mt={2} mb={1} variant="subtitile1">
-            Please login to your account and start searching for jobs...
-        </Typography>
-        {/* <Typography mt={2} mb={1} variant="h6">
-            Mobile Number
-        </Typography> */}
-        <TextField sx={{marginTop: 5}} placeholder="Enter your mobile number" label="Mobile Number" required/>
-        {/* <Typography mt={2} mb={1} variant="h6">
-            Enter OTP
-        </Typography> */}
-        <TextField sx={{marginTop: 5}} label="OTP" variant="outlined" />
-        <Button sx={{marginTop: 5}} variant="contained">Send OTP</Button>
-        </Box>
-        </Container>
-    )
+          Send OTP
+        </Button>
+      </div>
+    </div>
+  );
 }
 
 export default Login;

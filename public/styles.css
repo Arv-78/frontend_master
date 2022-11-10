@@ -6,10 +6,29 @@ body, html{
 .logo-img{
     height: 50px;
     width: 50px;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 
 .login-content-Img{
-    height: 98%;
-    width: 90%;
+    height: 100%;
+    width: 100%;
+}
+
+.label{
+    display: block;
+    margin-top: 5%;
+}
+
+.mob-input{
+    display: inline-block;
+}
+
+.MuiGrid-root{
+    height: 100%;
+}
+
+
+/* under test */
+.otp{
+    background: repeating-linear-gradient(90deg, dimgrey 0 , dimgrey 1ch, transparent 0, transparent 1.5ch) 0 100%/ 10ch 2px no-repeat;
 }
