@@ -16,8 +16,26 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column'
     },
     leftLogin: {
-        margin: 'auto 0',
-    }
+        marginTop: '15%',
+    },
+    OtpDiv: {
+        marginTop: '4%',
+        border: '1px solid rgba(0, 0, 0, 0.15)',
+        borderRadius: '40px',
+    },
+    OutInput: {
+        textAlign: 'center',
+        position: 'relative',
+        bottom: '4px',
+        width: '10%',
+        height: '23px',
+        margin: '0 8px',
+        border: 'none',
+        borderBottom: '1px solid grey',
+        '&:focus':  {
+            outline: 'none'
+        }
+    },
 }))
 
 export default useStyles;
